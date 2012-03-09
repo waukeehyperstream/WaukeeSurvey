@@ -1,0 +1,9 @@
+<h1>New option for "<%= @question.title %>" in the "<%= @poll.title %>" poll</h1>
+
+<%= form_for :option do |f| %>
+
+	Option: <%= f.text_field :title %> 
+	<br>
+	<%= f.submit "Add option" %>
+
+<% end %>

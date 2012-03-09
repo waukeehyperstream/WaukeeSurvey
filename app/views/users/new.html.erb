@@ -1,0 +1,12 @@
+<h1>Make a new account</h1>
+
+<%= form_for @user do |f| %>
+
+	Desired username: <%= f.text_field :username %>
+	<br>
+	Password: <%= f.password_field :password %>
+	<br>
+	<%= f.submit "Sign up" %>
+	
+
+<% end %>

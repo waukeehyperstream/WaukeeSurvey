@@ -1,0 +1,27 @@
+<h1>All questions for "<%= @poll.title %>" poll</h1>
+
+<% @questions.each do |question| %>
+	<div class="question">
+	<%= question.title %> <%= link_to "Edit", edit_poll_question_path(@poll,question) %> <%= link_to "Delete", poll_question_path(@poll,question), :method => :delete, :confirm => "Are you sure you want to delete?" %>
+	<br>
+	<ul>
+	<% @options.each do |thisoptionarray| %>
+		<% thisoptionarray.each do |option| %> 
+			<% if option.question_id == question.id %>
+				<% @optiondivname = option.id.to_s + "div" %>
+				<li id="<%= option.id %>"><%= option.title %> <%= link_to "Edit", edit_poll_question_option_path(@poll,question,option) %> <%= link_to "Delete", poll_question_option_path(@poll,question,option), :method => :delete, :confirm => "Are you sure you want to delete?" %></li>
+				<script type="text/javascript">
+					
+				</script>
+				<div id="<%= @optiondivname %>">
+
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+	</ul>
+	<%= link_to "Add new option", new_poll_question_option_path(@poll,question) %>
+	</div>
+<% end %>
+
+<%= link_to "Add new question", new_poll_question_path(@poll) %>

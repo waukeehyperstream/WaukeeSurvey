@@ -1,0 +1,7 @@
+<h1>Edit "<%= @option.title %>" option</h1>
+
+<%= form_for :option do |f| %>
+	Option:<%= f.text_field :title %>
+	<br>
+	<%= f.submit "Edit option" %>
+<% end %>

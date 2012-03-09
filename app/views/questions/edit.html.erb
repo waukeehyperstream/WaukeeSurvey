@@ -1,0 +1,7 @@
+<h1>Edit "<%= @question.title %>" question</h1>
+
+<%= form_for :question do |f| %>
+	Question:<%= f.text_field :title %>
+	<br>
+	<%= f.submit "Edit question" %>
+<% end %>

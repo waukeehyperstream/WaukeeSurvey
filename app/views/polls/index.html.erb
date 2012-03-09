@@ -1,0 +1,12 @@
+<h1>All polls</h1>
+<%= link_to "Create a new poll", new_poll_path %>
+<br>
+
+<% @polls.each do |poll| %>
+<div class="poll">
+<%= link_to poll.title, poll_questions_path(poll) %>
+<br>
+<br>
+</div>
+
+<% end %>

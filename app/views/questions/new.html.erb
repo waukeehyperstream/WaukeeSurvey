@@ -1,0 +1,9 @@
+<h1>New question for "<%= @poll.title %>" poll</h1>
+
+<%= form_for :question do |f| %>
+	
+	Question: <%= f.text_field :title %> 
+	<br>
+	<%= f.submit "Add question" %>
+
+<% end %>

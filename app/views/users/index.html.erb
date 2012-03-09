@@ -1,0 +1,10 @@
+<h1>Waukee Surveying</h1>
+
+<form method="post" action="/users/login" class="login" id="login">
+Username: <input type="text" name="username" /> Password: <input type="password" name="password" />
+<input type="submit" value="Login" />
+</form>
+
+<%= session[:user_id] %>
+
+<%= link_to "Create an account", new_user_path %>
